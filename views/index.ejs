@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="main.css" />
+</head>
+<body>
+    <h1>UV Protection App</h1>
+    <div class="columns">
+        <div class="column sunshine">
+            <img class="sun-image" src="assets/sun.png" alt="Sun Shining">
+        </div>
+        <div class="column person">
+            <img class="person-image" src="assets/person.png" alt="Person Contemplating Suncream">
+        </div>
+        <div class="column data">
+            <form class="form" action="/advice" method="POST">
+                <label class="form-label">Latitude</label>
+                <input class="input" type="number" name="latitude" min="-90.00" max="90.00" value="0" step="0.01" required>
+                <label class="form-label">Longitude</label>
+                <input class="input" type="number" name="longitude" min="-180.00" max="180.00" value="0" step="0.01" required>
+                <label class="form-label">Altitude in Metres</label>
+                <input class="input" type="number" name="altitude" min="0" max="1000" value="0" step="1" required>
+                <input class ="submit" type="submit" value="Submit">
+            </form>
+            <div>
+                <h2>Advice</h2>
+                <p class="data-response"> <%= locals.content %></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
